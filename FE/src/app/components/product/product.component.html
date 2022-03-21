@@ -1,0 +1,16 @@
+<div class="card" id="product" style="width: 18rem;" *ngIf="prod">
+    <a [routerLink]="['/product',prod.productID ]">
+        <img class="card-img-top mx-auto d-block my-3" src="{{prod.productImage}}" alt="{{prod.productName}}">
+    </a>
+    <div class="card-body">
+        <div class="d-flex justify-content-around">
+            <a [routerLink]="['/product',prod.productID ]">
+                <h5 class="card-title text-center">{{prod.productName}}</h5>
+            </a>
+            <h5>{{prod.buyPrice | price}}<span class="currency">đ</span></h5>
+        </div>
+        <div class="text-center mt-4">
+            <button class="btn btn-primary mx-auto btn-add" (click)="onAdd(prod)">Add to cart</button>
+        </div>
+    </div>
+</div>

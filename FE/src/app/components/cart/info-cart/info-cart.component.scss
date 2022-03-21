@@ -1,0 +1,40 @@
+#info-cart {
+    .tableFixHead {
+        overflow-y: auto;
+        height: 300px;
+    }
+    .tableFixHead thead th {
+        position: sticky;
+        top: 0;
+    }
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+    th,
+    td {
+        padding: 8px 16px;
+        border: 1px solid #ccc;
+        text-align: center;
+        vertical-align: middle;
+    }
+    th {
+        background: #eee;
+    }
+    img {
+        width: 80px;
+    }
+}
+
+#total-price {
+    margin-top: 36px;
+    .price {
+        font-size: 16px;
+        font-weight: normal;
+        margin-left: 48px;
+    }
+}
+
+.total {
+    padding-right: 110px;
+}

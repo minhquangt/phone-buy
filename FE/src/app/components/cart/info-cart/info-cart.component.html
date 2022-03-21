@@ -1,0 +1,50 @@
+<div id="info-cart">
+    <div class="title text-center">
+        <h3>Thông tin giỏ hàng</h3>
+    </div>
+    <div class="tableFixHead" *ngIf="orders.length !== 0">
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Ảnh sản phẩm</th>
+                    <th>Tên sản phẩm</th>
+                    <th>Số lượng</th>
+                    <th>Giá</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let o of orders, let i = index">
+                    <td>{{i+1}}</td>
+                    <td>
+                        <img src="{{o.orderImg}}" alt="{{o.orderName}}">
+                    </td>
+                    <td>
+                        {{o.orderName}}
+                    </td>
+                    <td>{{o.quantityOrdered}}</td>
+                    <td>{{o.orderPrice | price}}<span class="currency">đ</span></td>
+                    <td>
+                        <button (click)="deleteItem(o.productID,o.orderName)" class="btn btn-danger">Xóa</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="empty-cart" *ngIf="orders.length === 0">
+        <h1 class="text-center">Giỏ hàng của bạn trống</h1>
+        <div class="col-md-12 text-center mt-5">
+            <button (click)="backToHome()" class="btn btn-secondary">Về trang chủ</button>
+        </div>
+    </div>
+</div>
+<div id="total-price" class="float-end total" *ngIf="orders.length !== 0">
+    <h3>Tổng tiền:
+        <span class="price">{{totalPrice | price}}<span class="currency">đ</span></span>
+    </h3>
+    <div class="empty-cart">
+        <button (click)="emptyCart()" class="btn btn-warning text-white">Xóa giỏ hàng</button>
+        <button (click)="postCart()" class="btn btn-success ms-5">Mua ngay</button>
+    </div>
+</div>

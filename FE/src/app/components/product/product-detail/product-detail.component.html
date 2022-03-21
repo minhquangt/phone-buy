@@ -1,0 +1,54 @@
+<div class="container  mt-5" id="product-detail" *ngIf="prod">
+    <div class="row">
+        <div class="col-6">
+            <img src="{{prod.productImage}}" alt="" class="img-product-detail">
+        </div>
+        <div class="col-6">
+            <div class="details">
+                <div class="header mb-5">
+                    <h2 class="name text-center">
+                        {{prod.productName}}
+                    </h2>
+                </div>
+                <div class="specifications mb-5">
+                    <div class="title">
+                        <h4>Cấu hình {{prod.productName}}</h4>
+                    </div>
+                    <div class="content">
+                        <ul>
+                            <li>Màn hình: {{prod.productScreen}}</li>
+                            <li>Hệ điều hành: {{prod.operatingSystem}}</li>
+                            <li>Chip: {{prod.chip}}</li>
+                            <li>RAM: {{prod.RAM}}</li>
+                            <li>Pin: {{prod.battery}}mAh</li>
+                            <li>Camera trước: {{prod.frontCamera}}</li>
+                            <li>Camera sau: {{prod.backCamera}}</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer d-flex justify-content-around align-items-center mb-5">
+                    <div class="quantity">
+                        <button class="btn-quantity" (click)="decrease()">-</button>
+                        <input type="number" class="input-quantity" [(ngModel)]="quantity">
+                        <button class="btn-quantity" (click)="increase()">+</button>
+                    </div>
+                    <div class="price">
+                        <p>{{prod.buyPrice | price}}<span class="currency">đ</span></p>
+                    </div>
+                </div>
+                <div class="d-grid gap-2  mb-5">
+                    <button class="btn btn-primary btn-block btn-add" (click)="onAdd(prod)">Add to
+                        cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container" id="product-detail" *ngIf="!prod">
+    <div class="row">
+        <div class="col-12">
+            <h3 class="text-center">Không tìm thấy sản phẩm.</h3>
+        </div>
+    </div>
+</div>

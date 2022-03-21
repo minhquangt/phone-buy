@@ -1,0 +1,11 @@
+<app-brand></app-brand>
+<div class="container">
+    <div class="row" *ngIf="products">
+        <div class="col-3 mb-5" *ngFor="let prod of products">
+            <app-product [prod]="prod"></app-product>
+        </div>
+    </div>
+    <div *ngIf="!products" class="row">
+        <h2 class="text-center">Không chứa sản phẩm nào</h2>
+    </div>
+</div>

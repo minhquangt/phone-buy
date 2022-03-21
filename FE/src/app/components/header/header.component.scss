@@ -1,0 +1,51 @@
+#header {
+    .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        #logo {
+            width: 50px;
+        }
+        .input-search {
+            width: 500px;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            border: none;
+        }
+        .btn-serach {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            background-color: #fff;
+            border: none;
+            &:hover {
+                background-color: #eee;
+            }
+            i {
+                color: black;
+            }
+        }
+        .logOut {
+            &:hover {
+                cursor: pointer;
+            }
+        }
+        .register {
+            margin-right: 20px;
+            color: #fff;
+            font-size: 20px;
+            text-decoration: none;
+        }
+        i {
+            color: #fff;
+            font-size: 28px;
+            margin-right: 10px;
+            .badge {
+                font-size: 0.8rem;
+            }
+        }
+        .username {
+            font-size: 20px;
+            margin-right: 20px;
+        }
+    }
+}

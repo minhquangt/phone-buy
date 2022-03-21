@@ -1,0 +1,61 @@
+footer {
+    background-image: url("../../../assets/images/footer.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: rgb(241, 241, 241);
+    margin-top: 80px;
+}
+
+.footer-info {
+    padding: 32px 0px;
+}
+
+.col-sm-4 h5 {
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.col-sm-4 span {
+    font-weight: 700;
+}
+
+.col-sm-4 a {
+    text-decoration: none;
+    color: rgb(241, 241, 241);
+}
+
+.end {
+    background-color: rgb(91, 91, 91);
+    padding: 6px 0px;
+}
+
+.copyright {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.registerfollow img {
+    width: 200px;
+    height: 76px;
+}
+
+.rule .fa-facebook-official {
+    color: rgb(58, 88, 157);
+    font-size: 45px;
+    margin-right: 8px;
+}
+
+.rule .fa-envelope {
+    font-size: 28px;
+}
+
+@media only screen and (max-width: 739px) {
+    .rule,
+    .registerfollow {
+        margin-top: 48px;
+    }
+}

@@ -1,0 +1,35 @@
+#brand {
+    margin: 0.5rem 0;
+    padding: 0.5rem 0.3rem;
+    background: rgba(253, 253, 253, 0.924);
+    .brand {
+        width: 6rem;
+        text-align: center;
+        margin-right: 1rem;
+        cursor: pointer;
+        .img-container {
+            width: 4rem;
+            height: 4rem;
+            background: rgba(0, 128, 128, 0.278);
+            border-radius: 50%;
+            position: relative;
+            margin: auto;
+            .brand-img {
+                height: 4.2rem;
+                width: 4.2rem;
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                margin: auto;
+                text-align: center;
+            }
+        }
+        #brand-name {
+            font-family: sans-serif;
+            text-transform: capitalize;
+            margin-top: 10px;
+            color: teal;
+            text-align: center;
+        }
+    }
+}

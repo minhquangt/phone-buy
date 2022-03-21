@@ -1,0 +1,67 @@
+<div class="container">
+    <i id="account" class="fa fa-users"></i>
+    <div class="tabs">
+        <h2 class="reg-tab" (click)="onLogin('register')" [ngClass]="{active: isLogin===false}">Đăng ký</h2>
+        <h2 class="login-tab" (click)="onLogin('login')" [ngClass]="{active: isLogin}">Đăng nhập</h2>
+    </div>
+    <div id=" login-form" *ngIf="isLogin">
+        <form action=" " [formGroup]="formLogin">
+            <input type="text" formControlName="email" id="email" placeholder="Nhập email...">
+            <small *ngIf="formLogin.controls.email.touched && formLogin.controls.email.invalid" class="text-danger">
+                Vui lòng nhập email
+            </small>
+            <input type="password" formControlName="password" id="pass" placeholder="Nhập mật khẩu...">
+            <small *ngIf="formLogin.controls.password.touched && formLogin.controls.password.errors?.required" class="text-danger">
+                Vui lòng nhập mật khẩu
+            </small>
+            <button (click)="userLogin()">Đăng nhập</button>
+        </form>
+    </div>
+    <div id="registration-form" *ngIf="!isLogin">
+        <form action=" " [formGroup]="formRegister">
+            <input type="text" formControlName="email" id="email" placeholder="Nhập email... ">
+            <small *ngIf="formRegister.controls.email.touched && formRegister.controls.email.errors?.required" class="text-danger">
+                Vui lòng nhập email
+            </small>
+            <small *ngIf="formRegister.controls.email.touched && formRegister.controls.email.errors?.pattern" class="text-danger">
+                Vui lòng nhập email theo định dạng abc@gmail.com
+            </small>
+            <input type="password" formControlName="password" id="pass" placeholder="Nhập mật khẩu... ">
+            <small *ngIf="formRegister.controls.password.touched && formRegister.controls.password.errors?.required" class="text-danger">
+                Vui lòng nhập mật khẩu
+            </small>
+            <small *ngIf="formRegister.controls.password.touched && formRegister.controls.password.errors?.minlength" class="text-danger">
+                Vui lòng nhập mật khẩu có 8 kí tự trở lên
+            </small>
+            <input type="password" formControlName="confirmPassword" id="confirm-pass" placeholder="Nhập lại mật khẩu...">
+            <small *ngIf="formRegister.controls.confirmPassword.touched && formRegister.controls.confirmPassword.errors?.required" class="text-danger">
+                Vui lòng nhập lại mật khẩu
+            </small>
+            <small *ngIf="formRegister.controls.confirmPassword.touched && formRegister.controls.confirmPassword.errors?.mustMatch" class="text-danger">
+                Mật khẩu không khớp
+            </small>
+            <input type="text" formControlName="name" id="name" placeholder="Nhập tên... ">
+            <small *ngIf="formRegister.controls.name.touched && formRegister.controls.name.errors?.required" class="text-danger">
+                Vui lòng nhập tên
+            </small>
+            <input type="text" formControlName="phone" id="phone" placeholder="Nhập số điện thoại... ">
+            <small *ngIf="formRegister.controls.phone.touched && formRegister.controls.phone.errors?.required" class="text-danger">
+                Vui lòng nhập số điện thoại
+            </small>
+            <small *ngIf="formRegister.controls.phone.touched && formRegister.controls.phone.errors?.pattern" class="text-danger">
+                Vui lòng nhập số điện thoại theo đúng định dạng số Việt Nam. Ví dụ: 0988888888...
+            </small>
+            <input type="text" formControlName="address" id="address" placeholder="Nhập địa chỉ... ">
+            <small *ngIf="formRegister.controls.address.touched && formRegister.controls.address.errors?.required" class="text-danger">
+                Vui lòng nhập địa chỉ
+            </small>
+            <button (click)="userRegister()">Đăng ký</button>
+        </form>
+    </div>
+</div>
+<div id="overlay" *ngIf="isLoading">
+    <div class="loading">
+        <div class="spinner-border text-light" role="status">
+        </div>
+    </div>
+</div>
