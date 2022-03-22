@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { PricePipe } from './pipes/price.pipe';
 
 import { ProductComponent } from './components/product/product.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -17,7 +19,7 @@ import { InfoCartComponent } from './components/cart/info-cart/info-cart.compone
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrandComponent } from './components/brand/brand.component';
 import { LoginComponent } from './components/login/login.component';
-import { PricePipe } from './pipes/price.pipe';
+import { CarouselComponent } from './components/carousel/carousel.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +33,7 @@ import { PricePipe } from './pipes/price.pipe';
     BrandComponent,
     LoginComponent,
     PricePipe,
+    CarouselComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,6 +48,7 @@ import { PricePipe } from './pipes/price.pipe';
       progressBar: true,
       preventDuplicates: false,
     }),
+    CarouselModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

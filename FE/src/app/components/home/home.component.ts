@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     if (this.productsService.products.length === 0) {
       this.productsService.getAllProducts().subscribe((res: any) => {
-        this.products = res.data;
+        this.productsService.products$.next(res.data);
         this.productsService.products = res.data;
       });
     }
