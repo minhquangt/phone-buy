@@ -1,16 +1,16 @@
-<div class="card" id="product" style="width: 18rem;" *ngIf="prod">
-    <a [routerLink]="['/product',prod.productID ]">
-        <img class="card-img-top mx-auto d-block my-3" src="{{prod.productImage}}" alt="{{prod.productName}}">
-    </a>
-    <div class="card-body">
-        <div class="d-flex justify-content-around">
-            <a [routerLink]="['/product',prod.productID ]">
-                <h5 class="card-title text-center">{{prod.productName}}</h5>
-            </a>
-            <h5>{{prod.buyPrice | price}}<span class="currency">đ</span></h5>
-        </div>
-        <div class="text-center mt-4">
-            <button class="btn btn-primary mx-auto btn-add" (click)="onAdd(prod)">Add to cart</button>
-        </div>
+<div class="product" id="product" *ngIf="prod">
+    <div class="product-header">
+        <a [routerLink]="['/product',prod.productID ]" title="{{prod.productName}}">
+            <img class="card-img mx-auto d-block mt-5" src="{{prod.productImage}}" alt="{{prod.productName}}">
+        </a>
+    </div>
+    <div class="product-content mt-5 align-items-center">
+        <a [routerLink]="['/product',prod.productID ]" class="product-name" title="{{prod.productName}}">
+            <p class="text-center">{{prod.productName}}</p>
+        </a>
+    </div>
+    <div class="product-footer text-center mb-5 flex-end">
+        <h6 class="text-center mb-5 product-price">{{prod.buyPrice | price}}<span class="currency">đ</span></h6>
+        <button class="btn btn-dark mx-auto btn-add" (click)="onAdd(prod)">Thêm vào giỏ hàng</button>
     </div>
 </div>
