@@ -1,7 +1,8 @@
 #info-cart {
     .tableFixHead {
         overflow-y: auto;
-        height: 300px;
+        height: 335px;
+        background-color: #212529;
     }
     .tableFixHead thead th {
         position: sticky;
@@ -14,13 +15,11 @@
     th,
     td {
         padding: 8px 16px;
-        border: 1px solid #ccc;
+        border: 1px solid #fff;
         text-align: center;
         vertical-align: middle;
-    }
-    th,
-    td {
-        background: #eee;
+        background: #212529;
+        color: #fff;
     }
     img {
         width: 80px;

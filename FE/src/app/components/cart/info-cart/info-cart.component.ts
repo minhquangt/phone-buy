@@ -23,20 +23,24 @@ export class InfoCartComponent implements OnInit {
   }
 
   postCart() {
-    this.orderService
-      .postCart({ userID: localStorage.getItem('userID'), cart: this.orders })
-      .subscribe((cart) => {
-        console.log(cart);
-        Swal.fire(
-          'Đặt hàng thành công !',
-          'Cảm ơn bạn đã tin tưởng và ủng hộ cửa hàng.',
-          'success'
-        );
-        this.orderService.cleanCart();
-        this.getCart();
-        this.orderService.totalOrdering$.next(0);
-        this.orderService.quantityOrdering$.next(0);
-      });
+    if (confirm(`Bạn có muốn thanh toán toàn bộ giỏ hàng không?`)) {
+      this.orderService
+        .postCart({ userID: localStorage.getItem('userID'), cart: this.orders })
+        .subscribe((cart) => {
+          console.log(cart);
+          Swal.fire(
+            'Đặt hàng thành công !',
+            'Cảm ơn bạn đã tin tưởng và ủng hộ cửa hàng.',
+            'success'
+          );
+          this.orderService.cleanCart();
+          this.getCart();
+          this.orderService.totalOrdering$.next(0);
+          this.orderService.quantityOrdering$.next(0);
+        });
+    } else {
+      return;
+    }
   }
 
   deleteItem(id: number, orderName: string) {
