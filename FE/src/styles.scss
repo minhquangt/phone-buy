@@ -48,3 +48,13 @@ a {
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
 }
+
+
+/*Button add*/
+
+.btn-add {
+    &:hover {
+        background-color: #fff;
+        color: #000;
+    }
+}

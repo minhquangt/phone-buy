@@ -28,12 +28,11 @@
                 outline: none;
                 text-align: center;
             }
-            .price {
+            .price p,
+            .quantity span {
                 font-size: 20px;
                 font-weight: bold;
-            }
-            .btn-add {
-                font-size: 50px;
+                margin: 0 20px;
             }
         }
     }

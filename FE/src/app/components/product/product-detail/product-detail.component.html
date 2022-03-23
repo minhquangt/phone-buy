@@ -12,7 +12,7 @@
                 </div>
                 <div class="specifications mb-5">
                     <div class="title">
-                        <h4>Cấu hình {{prod.productName}}</h4>
+                        <h4>Cấu hình điện thoại:</h4>
                     </div>
                     <div class="content">
                         <ul>
@@ -28,17 +28,19 @@
                 </div>
                 <div class="footer d-flex justify-content-around align-items-center mb-5">
                     <div class="quantity">
+                        <span>Số lượng:</span>
                         <button class="btn-quantity" (click)="decrease()">-</button>
                         <input type="number" class="input-quantity" [(ngModel)]="quantity">
                         <button class="btn-quantity" (click)="increase()">+</button>
                     </div>
                     <div class="price">
-                        <p>{{prod.buyPrice | price}}<span class="currency">đ</span></p>
+                        <p>{{prod.buyPrice * quantity | price}}<span class="currency">đ</span></p>
                     </div>
                 </div>
                 <div class="d-grid gap-2  mb-5">
-                    <button class="btn btn-primary btn-block btn-add" (click)="onAdd(prod)">Add to
-                        cart</button>
+                    <button class="btn btn-dark btn-block btn-add" (click)="onAdd(prod)">
+                        Thêm vào giỏ hàng
+                    </button>
                 </div>
             </div>
         </div>
