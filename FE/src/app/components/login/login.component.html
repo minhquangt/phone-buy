@@ -14,7 +14,7 @@
             <small *ngIf="formLogin.controls.password.touched && formLogin.controls.password.errors?.required" class="text-danger">
                 Vui lòng nhập mật khẩu
             </small>
-            <button (click)="userLogin()">Đăng nhập</button>
+            <button class="btn btn-outline-dark" (click)="userLogin()">Đăng nhập</button>
         </form>
     </div>
     <div id="registration-form" *ngIf="!isLogin">
@@ -55,7 +55,7 @@
             <small *ngIf="formRegister.controls.address.touched && formRegister.controls.address.errors?.required" class="text-danger">
                 Vui lòng nhập địa chỉ
             </small>
-            <button (click)="userRegister()">Đăng ký</button>
+            <button class="btn btn-outline-dark" (click)="userRegister()">Đăng ký</button>
         </form>
     </div>
 </div>

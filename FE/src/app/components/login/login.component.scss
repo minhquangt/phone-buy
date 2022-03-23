@@ -8,11 +8,9 @@
     #account {
         position: relative;
         font-size: 90px;
-        color: #e1cfcf;
+        color: #fff;
         padding: 19px;
-        background: rgb(99, 140, 187);
-        background: radial-gradient( circle, rgb(10, 51, 98) 54%, rgba(10, 3, 60, 0.97) 100%);
-        border-radius: 10px;
+        background: #000;
         border-bottom-left-radius: 100px;
         border-bottom-right-radius: 100px;
         top: -60px;
@@ -33,15 +31,16 @@
             padding-bottom: 10px;
             margin: auto 5px;
             cursor: pointer;
+            color: #999;
         }
         .reg-tab:hover,
         .login-tab:hover {
-            color: rgb(10, 51, 98);
-            border-bottom: 4px solid rgb(10, 51, 98);
+            color: #000;
+            border-bottom: 4px solid #000;
         }
         .active {
-            color: rgb(10, 51, 98);
-            border-bottom: 4px solid rgb(10, 51, 98);
+            color: #000;
+            border-bottom: 4px solid #000;
         }
     }
     form {
@@ -84,16 +83,7 @@
     button {
         margin: 60px auto;
         font-size: 20px;
-        background-color: rgb(10, 51, 98);
-        color: white;
         padding: 10px 45px;
-        border-radius: 18px;
-        box-shadow: 0 0 2px rgb(117, 113, 113);
-        border: none;
-        cursor: pointer;
-    }
-    button:hover {
-        background-color: rgba(0, 81, 255, 0.781);
     }
 }
 
