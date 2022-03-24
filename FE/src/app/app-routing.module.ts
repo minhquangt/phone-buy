@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CartComponent } from './components/cart/cart.component';
-import { HomeComponent } from './components/home/home.component';
-import { LoginComponent } from './components/login/login.component';
-import { ProductDetailComponent } from './components/product/product-detail/product-detail.component';
+import { CartComponent } from './page/cart/cart.component';
+import { HomeComponent } from './page/home/home.component';
+import { LoginComponent } from './page/login/login.component';
+import { ProductDetailComponent } from './page/product/product-detail/product-detail.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },

@@ -4,6 +4,7 @@ import { ToastrService } from 'ngx-toastr';
 import { BehaviorSubject } from 'rxjs';
 import { Order } from '../models/order';
 import { Product } from '../models/product';
+import Swal from 'sweetalert2';
 
 @Injectable({
   providedIn: 'root',
@@ -52,7 +53,11 @@ export class OrderService {
   }
 
   showErrorNotLogin() {
-    this.toastr.error('Bạn cần đăng nhập mới có thể mua hàng.');
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'Bạn cần đăng nhập mới có thể mua hàng.',
+    });
   }
 
   deleteProduct(id: number) {
