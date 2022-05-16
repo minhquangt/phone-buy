@@ -11,15 +11,15 @@ import { PricePipe } from './pipes/price.pipe';
 
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { HomeComponent } from './page/home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrandComponent } from './components/brand/brand.component';
-import { LoginComponent } from './page/login/login.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
-import { ProductComponent } from './page/product/product.component';
-import { ProductDetailComponent } from './page/product/product-detail/product-detail.component';
-import { CartComponent } from './page/cart/cart.component';
-import { InfoCartComponent } from './page/cart/info-cart/info-cart.component';
+import { ProductComponent } from './pages/product/product.component';
+import { HomeComponent } from './pages/home/home.component';
+import { CartComponent } from './pages/cart/cart.component';
+import { ProductDetailComponent } from './pages/product/product-detail/product-detail.component';
+import { InfoCartComponent } from './pages/cart/info-cart/info-cart.component';
+import { LoginComponent } from './pages/login/login.component';
 @NgModule({
   declarations: [
     AppComponent,

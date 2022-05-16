@@ -7,6 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   ngOnInit() {
-    localStorage.removeItem('userID');
+    // localStorage.removeItem('userID');
   }
 }

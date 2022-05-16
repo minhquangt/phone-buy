@@ -27,13 +27,15 @@ export class HeaderComponent implements OnInit {
     });
     this.loginService.name$.subscribe((name) => {
       this.name = name;
-      console.log(name);
     });
+    if (localStorage.getItem('user')) {
+      this.name = JSON.parse(localStorage.getItem('user') || '{}').name;
+    }
   }
 
   logOut() {
     if (confirm('Bạn có muốn đăng xuất không?')) {
-      localStorage.removeItem('userID');
+      localStorage.removeItem('user');
       this.loginService.name$.next('');
       this.router.navigateByUrl('/login');
       this.orderService.quantityOrdering$.next(0);

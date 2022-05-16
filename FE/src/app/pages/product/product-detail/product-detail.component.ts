@@ -43,7 +43,7 @@ export class ProductDetailComponent implements OnInit {
   }
 
   onAdd(prod: Product) {
-    if (localStorage.getItem('userID')) {
+    if (localStorage.getItem('user')) {
       this.orderService.addProduct(prod, this.quantity);
     } else {
       this.orderService.showErrorNotLogin();

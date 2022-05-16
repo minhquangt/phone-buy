@@ -64,7 +64,6 @@ let searchProduct = (req, res) => {
         }
     });
 };
-
 module.exports = {
     getAllProducts,
     getSingleProducts,

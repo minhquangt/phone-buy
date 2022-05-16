@@ -14,7 +14,13 @@ export class OrderService {
   public orders: Order[] = [];
   public totalOrdering$ = new BehaviorSubject(<number>0);
   public quantityOrdering$ = new BehaviorSubject(<number>0);
-  constructor(private http: HttpClient, private toastr: ToastrService) {}
+  constructor(private http: HttpClient, private toastr: ToastrService) {
+    if (localStorage.getItem('orders')) {
+      this.orders = JSON.parse(localStorage.getItem('orders') || '{}');
+      this.quantityOrdering$.next(this.orders.length);
+      this.totalOrdering$.next(this.getTotal());
+    }
+  }
 
   postCart(cart: any) {
     return this.http.post<any>(`${this.apiURL}`, cart);
@@ -39,6 +45,7 @@ export class OrderService {
       };
       this.orders.push(orderNew);
     }
+    this.saveOrdersLocalStoretorage(this.orders);
   }
 
   addProduct(product: Product, quantity: number) {
@@ -62,10 +69,12 @@ export class OrderService {
 
   deleteProduct(id: number) {
     this.orders = this.orders.filter((o) => o.productID !== id);
+    this.saveOrdersLocalStoretorage(this.orders);
   }
 
   cleanCart() {
     this.orders = [];
+    this.saveOrdersLocalStoretorage(this.orders);
   }
 
   getTotal(): number {
@@ -74,5 +83,9 @@ export class OrderService {
       total += o.orderPrice * o.quantityOrdered;
     });
     return total;
+  }
+
+  saveOrdersLocalStoretorage(orders: any) {
+    localStorage.setItem('orders', JSON.stringify(orders));
   }
 }

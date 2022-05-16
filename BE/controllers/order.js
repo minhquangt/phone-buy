@@ -1,7 +1,6 @@
 var db = require('../models/database');
 
 let postOrder = (req, res) => {
-    // const { userID, carts } = req.body;
     const { userID, cart } = req.body;
     let cartInsert = '';
     cart.forEach(order => {

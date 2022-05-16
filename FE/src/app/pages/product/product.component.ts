@@ -1,8 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Router } from '@angular/router';
 import { Product } from 'src/app/models/product';
 import { OrderService } from 'src/app/services/order.service';
-import { ProductsService } from 'src/app/services/products.service';
 
 @Component({
   selector: 'app-product',
@@ -11,15 +9,12 @@ import { ProductsService } from 'src/app/services/products.service';
 })
 export class ProductComponent implements OnInit {
   @Input() prod?: Product;
-  constructor(
-    private productsService: ProductsService,
-    private orderService: OrderService
-  ) {}
+  constructor(private orderService: OrderService) {}
 
   ngOnInit(): void {}
 
   onAdd(prod: Product): void {
-    if (localStorage.getItem('userID')) {
+    if (localStorage.getItem('user')) {
       this.orderService.addProduct(prod, 1);
     } else {
       this.orderService.showErrorNotLogin();

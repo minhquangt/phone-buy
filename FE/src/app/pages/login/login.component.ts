@@ -77,7 +77,7 @@ export class LoginComponent implements OnInit {
         .subscribe((res: any) => {
           console.log(res);
           if (res.data) {
-            localStorage.setItem('userID', res.data.userID);
+            localStorage.setItem('user', JSON.stringify(res.data));
             alert(
               'Đăng nhập thành công. Nhấn OK để chuyển sang trang mua hàng.'
             );
