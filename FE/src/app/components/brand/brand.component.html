@@ -1,6 +1,7 @@
 <div class="container">
-    <section id="brand" class="d-flex flex-row align-items-center justify-content-around bg-transparent">
-        <div class="brand" *ngFor="let brand of brands" (click)="filterBrand(brand)">
+    <h1 class="text-center mb-5">Danh mục cửa hàng</h1>
+    <section id="brand" class="row d-flex flex-row align-items-center justify-content-around bg-transparent">
+        <div class="brand col-lg-2 col-md-3 col-sm-6" *ngFor="let brand of brands" (click)="filterBrand(brand)">
             <div class="img-container">
                 <img src="../../../assets/images/{{brand}}.png" alt="{{brand}}" class="brand-img">
             </div>
