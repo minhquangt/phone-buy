@@ -1,0 +1,35 @@
+CREATE TABLE users (
+userID VARCHAR(255) PRIMARY KEY,
+email VARCHAR(255) NOT NULL,
+password VARCHAR(255) NOT NULL,
+name VARCHAR(255) NOT NULL,
+phone VARCHAR(255) NOT NULL,
+address VARCHAR(255) NOT NULL
+)
+
+CREATE TABLE products(
+productID int(11) AUTO_INCREMENT  PRIMARY KEY,
+productName VARCHAR(255) ,
+productBrand VARCHAR(255) NOT NULL,
+productScreen VARCHAR(255) NOT NULL,
+operatingSystem VARCHAR(255) NOT NULL,
+chip VARCHAR(255) NOT NULL,
+RAM VARCHAR(255) NOT NULL,
+battery int(11) NOT NULL,
+frontCamera VARCHAR(255) NOT NULL,
+backCamera VARCHAR(255) NOT NULL,
+productImage VARCHAR(255) NOT NULL,
+quantityInStock int(11) NOT NULL,
+quantityBought int(11) NOT NULL,
+buyPrice double NOT NULL
+)
+
+CREATE TABLE orders(
+orderID int(11) AUTO_INCREMENT PRIMARY KEY,
+orderDate timestamp NOT NULL,
+userID VARCHAR(255) NOT NULL,
+productID int(11) NOT NULL,
+quantityOrdered int(11) NOT NULL,
+status VARCHAR(255) NOT NULL,
+FOREIGN KEY (userID) REFERENCES users(userID)
+)
